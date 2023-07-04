@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let ar = [23, 39, 16, 23, 44]
+        //데이터 개수 파악
+        console.log(ar.length)
+        //데이터 순회
+        for(idx in ar){
+            console.log(ar[idx])
+        }
+
+        //데이터 순회하면서 작업하기 - forEach
+        //배열을 순회하면서 데이터를 하나씩 접근하는 함수
+        //첫번쨰는 데이터, 두번째는 인덱스, 세번쨰는 배열
+        ar.forEach((element, index, array)=>{
+            console.log(element)
+        })
+
+
+
+    </script>
+    
+</body>
+</html>

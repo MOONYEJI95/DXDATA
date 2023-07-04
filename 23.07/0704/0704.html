@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
+        /*
         //사용자 정의 객체
         let ar = [{name:"adam", job : "singer"}, {name : "jessica", job : "person"}]
         document.write(ar[0].name, ar[0].job)
@@ -13,10 +14,86 @@
             document.write(ar[idx]+"<br/>")
         }
 
+        let obj = {name : "adam", disp : function(){
+	alert(this.name)  // this = self
+}}
+obj.disp() //method 호출
+*/
+/*
+    //생성자가 없는 경우 동일한 모양의 2개의 객체 생성
+    let ar = [
+        {name : "adam", disp:function(){console.log(this.name)}},
+        {name : "jessica", disp:function(){console.log(this.name)}}
+    ]
+    for(idx in ar){
+        ar[idx].disp()
+    }
+    //생성자 - 함수 안에서 this를 사용했기 때문에
+    let person = function(name){
+        this.name = name;
+        this.disp = function(){console.log(this.name)}
+    }
+    //메서드는 다시 만들지 않고 속성만 설정해서 인스턴트를 생성
+    //생성자를 이용해서 인스턴트를 만들 떄는 new와 함께 호출해야함
+    //heap이라는 공간에 인스턴트를 생성
+    ar = [new person("adam"), new person("jessica")]
+    for(idx in ar){
+        ar[idx].disp();
+    }
+*/
 
 
+    // 클래스를 생성하고 인스턴스 생성
+    // 클래스 이름은 관습적으로 대문자로 시작
+    let Member = class{
+        constructor(name){
+            this.name = name
+        }
+        //클래스 안에 메서드를 만들떄는 let이나 function 생략 가능
+        disp() {
+            console.log(this.name)
+        }
+    }
 
+    ar = [new Member("루시아"), new Member("사이다")]
+    for(idx in ar){
+        ar[idx].disp()
+    }
 
+    let Person = class{
+        //생성자
+        constructor(name, score){
+            this.name = name;
+            this.score = score;
+        }
+        //출력하는 메서드
+        disp(){
+            console.log(this.name + ":"+this.score)
+        }
+    
+        //getter
+        getName(){
+            return this.name
+        }
+        getScore(score){
+            //올바른 데이터인지 아닌지 확인해서 올바른 데이터가 아니면 대입하지 않음
+            if(score < 0 || score > 100){
+                alert("적절하지 않은 점수");
+                return;
+            }
+            this.score = score;
+        }
+        //setter
+        setName(name){
+            this.name = name
+        }
+    }
+
+    let obj = new Person("아담", 90)
+    obj.setScore(90)
+    obj.disp()
+
+    
     </script>
 </head>
 <body>

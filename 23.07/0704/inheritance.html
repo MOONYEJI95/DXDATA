@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        let Super = class{
+            
+            method(){
+                console.log("상위 클래스의 메서드")
+            }
+        }
+        //Super로부터 상속받는 Sub 클래스
+        class Sub extends Super{
+            //overriding
+            method(){
+                super.method();
+                console.log("하위 클래스의 메서드")
+            }
+
+        }
+
+        let obj = new Sub()
+        //Sub에는 method가 없지만 상속을 받아서 호출이 가능
+        obj.method()
+
+        
+        */
+        //모두 대문자로 변경하고 좌우 공백 제거
+        let company = "      Adamsoft"
+        let result = company.trim().toUpperCase()
+        console.log(result)
+        console.log(company.indexOf("am"))
+
+   
+        //아래 파일 명에서 확장자를 추출
+        //.단위로 분할해서 마지막 요소를 출력
+        let filename = "adam.hwp"
+        let str = filename.split('.')
+        console.log(str[1])
+        //.위치를 찾고 . 다음 부분을 추출
+        let index = filename.indexOf(".")
+        console.log(filename.substring(5))
+
+
+
+        //CGGC의 모든 위치를 출력하시오
+        //중첩되는 경우 앞의 문자열 한번만 적용
+        let origin = "ABCDCGGCDKEDCGGCGGCDDDD"
+        let str2 = origin.indexOf("CGGC")
+        console.log(str2)
+
+
+        
+
+    </script>
+    
+</body>
+</html>
