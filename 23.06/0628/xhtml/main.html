@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .redarea{
+            color:red;
+        }
+    </style>
+</head>
+<body bgcolor="aqua" text="blue">
+    <!--절대 경로를 이용한 링크 설정-->
+    <a href="./index.html" target="_blank">인덱스</a>
+    <!--절대 경로를 이용한 링크 설정-->
+    <a href="http://google.co.kr">구글</a>
+    <h1 class="redarea">안녕하세요</h1> <!--h1은 한개만 가능-->
+    <p class="redarea">반갑습니다</p>
+    <p id="adam">두번째 단락입니다</p>
+    <button id="btn">클릭</button>
+    <script>
+        document.getElementByID("btn").addEventlistener("click", function(e){document.getElementById("adam").innerHTML="클릭"})
+    </script>
+
+    <h3>커피</h3>
+    <ol>
+        <li>아메리카노!!!</li>
+        <li>카푸치노!!!</li>
+    </ol>
+    <!--절대 경로를 이용한 이미지 출력-->
+    <img src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fcdn.pixabay.com%2Fphoto%2F2022%2F03%2F27%2F11%2F23%2Fcat-7094808_960_720.jpg&tbnid=Ho4i0wp9PL0LnM&vet=12ahUKEwjbkN27ruX_AhXNVd4KHe06DmsQMyhNegQIARB6..i&imgrefurl=https%3A%2F%2Fpixabay.com%2Fko%2Fphotos%2F%25EC%2588%2599%25EC%25B7%25A8-%25EA%25B3%25A0%25EC%2596%2591%25EC%259D%25B4-%25EA%25B3%25A0%25EC%2596%2591%25EC%259D%25B4-%25EC%2596%25BC%25EA%25B5%25B4-7094808%2F&docid=h0hYKWW-z-N0PM&w=960&h=640&q=%EA%B3%A0%EC%96%91%EC%9D%B4&ved=2ahUKEwjbkN27ruX_AhXNVd4KHe06DmsQMyhNegQIARB6"
+    width="200" height="200"/>
+    <img src="./0628/image2.jpg" width="100" height="100"/>
+
+</body>
+</html>

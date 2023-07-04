@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        let score = 90
+        //score가 60 이상이면 합격이라고 콘솔에 출력
+        // { }는 하나의 블럭
+        if(score >= 60){
+            console.log("합격")
+            // let을 붙이면 지역변수로 생성
+            // 블럭 외부에서는 사용할 수 없음
+            // let name="adam"
+
+        }
+        //console.log(name);
+        */
+        /*
+        let score = 50
+        // score가 60 이상이면 합격 그렇지 않으면 불합격
+        let msg;
+        if(score>=60){
+            console.log(msg = "합격")
+
+        } else {
+            console.log(msg ="불합격")
+        }
+
+        console.log(msg)
+        */
+        //코딩테스트 문제를 풀 떄는 범위를 정확하게 확인해야 함
+        //80~100 : 우수, 60~79 : 보통, 0~59 : 저조, 그 외 : 잘못된 점수
+        /*
+        let score = 79
+        if(score >= 80 && score <=100){
+            console.log("우수");
+        } else if(score >= 60 && score <=79){
+            console.log("보통");
+        } else if(score >=0 && score <=59){
+            console.log("저조");
+        } else{
+            console.log("잘못된 점수");
+        }
+        */
+
+
+
+        let year = 2024;
+        //year가 윤년인지 판별해서 윤년이면 2023년은 윤년이라고 콘솔에 출력하고
+        // 윤년이 아니면 2023년은 윤년이 아니라고 콘솔에 출력
+        // 윤년은 아래 두 조건 중 하나만 만족하면 됨
+        // 1. 4의 배수이고 100의 배수는 아닌 경우
+        // 2. 400의 배수인 경우
+
+        if(year % 4 == 0 && year % 100 !=0 || year % 400 == 0){
+            console.log(year + "년은 윤년");
+
+        }else{
+            console.log(year+"년은 윤년이 아님")
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

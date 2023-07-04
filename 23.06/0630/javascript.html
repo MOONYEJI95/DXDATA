@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--외부에 있는 js파일을 가져와서 사용-->
+    <script src="./js/first.js"></script>
+</head>
+<body>
+    <!--태그 안에 스크립트 코드 작성-->
+    <button onclick="alert('버튼 클릭')">버튼</button>
+    <button id="btn">버튼</button>
+    <!--HTML 파일 안에 스크립트 코드 작성-->
+    <script>
+        document.getElementById("btn").addEventListener("click",
+        function(){
+            alert("두번째 버튼 클릭")
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <script>
+        function zergattack(){
+            document.write("저그의 공격" + "<br/>")
+        }
+        function protossattack(){
+            document.write("프로토스의 공격" + "<br/>")
+        }
+
+        //zergattack()
+        //protossattack()
+
+        let starcraft
+        //함수도 하나의 데이터이므로 변수에 함수를 대입하는 것이 가능
+        starcraft = zergattack
+        //저그의 어택
+        //함수의 내용을 다른 변수에 담아서 호출하는 것을 DELEGATE라고 함
+        starcraft()
+
+        starcraft = protossattack
+        //프로토스의 어택
+        //동일한 코드가 대입된 내용에 따라 다른 함수를 호출
+        //동일한 메세지에 대하여 다르게 반응하는 성질 - Polymorphism(다형성)
+        starcraft()
+
+        function outer(){
+            let data = 0 // 함수 안에서 만든 변수라서 함수 안에서만 사용 가능
+            //함수가 함수를 리턴
+            //이렇게 함수를 리턴해서 내부의 데이터를 외부에서 변경하는 것을
+            //closure라고 함
+            return function(){
+                data = data + 1
+                console.log(data)
+            }
+        }    
+        //outer함수를 호출하고 그 결과를 inner에 저장
+        let inner = outer()
+        inner()
+        inner()
+
+        //익명함수
+        //익명(이름없는)이라는 단어가 나오면 필요할 때 만들어서 사용
+        const arrow = ( ) => {
+            alert("이름없는 화살표 함수")
+        }
+        arrow ()
+
+        //confirm은 확인을 누르면 true, 취소를 누르면 false를 리턴
+        let r = confirm("식사는 하셨나요?")
+        //조건에 사용을 할 때 == true는 생략가능, !r 이랑 r==false랑 동일
+        if(r==true){
+            document.write("무엇을 드셨나요?")
+        }else{
+            document.write("아무거라도 드세요")
+        }
+
+        let redvelvet = "name=아이린"
+        let encoding = encodeURI(redvelvet)
+        alert(encoding)
+        alert(decodeURI(encoding))
+
+    </script>
+    
+</body>
+</html>
