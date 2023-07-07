@@ -69,3 +69,73 @@ collect(*{"key1":100,"key2":200})
 collect(**{"a":100,"b":200})
 #dict는 *이 2개이면 value값이 매개변수에 전달
 #이 때 key 이름과 매개변수 이름이 같아야 함
+
+#가변 매개변수 사용
+#매개변수 개수 상관없이 대입해서 호출 가능
+#함수 내부에서는 튜플
+def merge(name,*li):
+    for element in li :
+        print(element)
+merge(10)
+merge(10,20)
+merge(10,20,30)
+merge("adam", 10, 20, 30)
+# merge(name="adam", 10, 20, 30) 이 구분은 에러
+
+def merge2(*li, name):
+    for element2 in li :
+        print(element2)
+
+merge2(10, 20, 30, name="adam")
+# merge(10,20,30,"adam") 이 구문은 에러
+
+def merge3(name, **param) :
+    for k in param :
+        print(k, param[k])
+
+merge3(name="adam", job="singer", gender="남자")
+
+def hap(n:int) -> int :
+    if n == 1 :
+        return 1
+    return n + hap(n-1)
+def x() :
+    for i in range(10) :
+        if i == 5 :
+            break # 이 부분 return으로 써도 동일
+
+print(hap(10))
+
+# 피보나치 수열을 재귀로 구하는 함수
+# 첫번째와 두번째는 1 그 이후부터는 이전 2개 항의 합
+# 1,1,2,3,5,8,13,21,34,55,89
+
+#한번 계산한 식은 기억해두는 함수(재귀 쓸 때 오래걸리니까 사용하기)
+import functools
+@functools.lru_cache() #메모리제이션 : 함수의 호출 결과를 저장해 둔 후 재사용 하는 것
+
+def fibonacci(n:int) -> int :
+    if n == 1 or n == 2 :
+        return 1
+    return fibonacci(n-1) + fibonacci(n-2)
+
+print(fibonacci(10)) #55
+print(fibonacci(35)) #89
+
+# 재귀 안쓰는 방법(가독성은 떨어지지만 속도가 빠름)
+def fibo(n:int) -> int:
+    result = 1
+    n_1 = 1
+    n_2 = 1
+    for i in range(3,n+1) :
+        result = n_1 + n_2
+        n_2 = n_1
+        n_1 = result
+    return result
+print(fibo(10))
+print(fibo(11))
+
+# 함수 도움말 만들기
+fibonacci.__doc__ = "재귀를 이용해서 피보나치 수열의 값을 리턴하는 함수"
+help(fibonacci)
+
