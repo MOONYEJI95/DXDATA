@@ -5,6 +5,7 @@
 3 **
 4 *
 """
+"""
 for i in range(5) :
     if i < 3 :
         for j in range(i+1) :
@@ -14,7 +15,7 @@ for i in range(5) :
         for j in range(5-i) :
             print("*", end="")
         print()
-
+"""
 
 """
     *    
@@ -22,11 +23,11 @@ for i in range(5) :
   *   *
  *     *
 *********  
-0 : 4 1 4
-1 : 3 1 1 1 3
-2 : 2 1 3 1 2
-3 : 1 1 5 1 1
-4 : 0 9 0
+0 : 4 1
+1 : 3 1 1 1
+2 : 2 1 3 1
+3 : 1 1 5 1
+4 : 9
 """
 """
 cnt = 0
@@ -98,6 +99,6 @@ else :
     print(result)
 """
 
-print(dir(__builtins__))
+# print(dir(__builtins__))
 
 
