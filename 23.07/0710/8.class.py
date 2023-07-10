@@ -47,4 +47,5 @@ stu1.setScore(98)
 print(stu1.getName())
 print(stu1.getScore())
 #최근에 등장한 IDE는 대부분 getter와 setter를 만드는 유틸을 제공
+#메서드 호출할 때 self는 뺴야함!
 
