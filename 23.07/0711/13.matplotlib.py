@@ -5,3 +5,4 @@ plt.grid()
 plt.show()
 fig.savefig("gragh.png")
 
+
