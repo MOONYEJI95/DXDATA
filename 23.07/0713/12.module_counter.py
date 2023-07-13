@@ -18,7 +18,6 @@ for name, count in data :
     counter[name] += count
 print(counter)
 
-
 # 데이터가 등장한 횟수 구하기
 counter = Counter()
 for name, count in data :
