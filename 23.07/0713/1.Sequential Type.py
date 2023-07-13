@@ -20,20 +20,18 @@ problem = "GDKGKCKGCCGCCGKDKGKDKGKGCCG"
 # 한번 포함되면 포함된 문자는 빼고 찾아야 함
 # 예를 들어 GCCGCCG는 1번만 찾아야 함
 # for 나 while은 한번만 쓰기
-
 #help(str.find)
+#result = problem.find("GCCG")
 
-result = problem.find("GCCG")
 li1 = []
-for i in range(len(problem)) :
-    li = problem[i:i+4]
-    if li=="GCCG" :
-       li1.append(i)
-print(li1)
-for j in range(len(li1)) :
-    if li1[j+1]-li1[j] == 3 :
-        del li1[j+1]
-
+i = 0
+while i < len(problem) - 3:
+    li = problem[i:i + 4]
+    if li == "GCCG":
+        li1.append(i)
+        i = i + 4
+    else:
+        i = i + 1
 print(li1)
 
 
