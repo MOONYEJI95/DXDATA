@@ -15,7 +15,6 @@ print(s)
 s = f"a = {a:d}"
 print(s)
 
-
 problem = "GDKGKCKGCCGCCGKDKGKDKGKGCCG"
 # 위 문자열에서 GCCG의 위치를 전부 출력
 # 한번 포함되면 포함된 문자는 빼고 찾아야 함
@@ -23,6 +22,25 @@ problem = "GDKGKCKGCCGCCGKDKGKDKGKGCCG"
 # for 나 while은 한번만 쓰기
 
 #help(str.find)
+
+result = problem.find("GCCG")
+li1 = []
+for i in range(len(problem)) :
+    li = problem[i:i+4]
+    if li=="GCCG" :
+       li1.append(i)
+print(li1)
+for j in range(len(li1)) :
+    if li1[j+1]-li1[j] == 3 :
+        del li1[j+1]
+
+print(li1)
+
+
+
+
+
+
 
 
 
