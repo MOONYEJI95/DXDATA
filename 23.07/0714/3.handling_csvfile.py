@@ -29,5 +29,3 @@ with open('./test.csv', 'a', encoding='utf-8') as file : # a는 추가하는것
     wr.writerow(['조던', '피펜', '올라주원'])
 print(data)
 
-
-
